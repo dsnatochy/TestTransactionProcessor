@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.testtransactionprocessor" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <service
+            android:name=".TransactionService"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="co.poynt.os.services.v1.IPoyntTransactionService" />
+            </intent-filter>
+
+            <meta-data
+                android:name="co.poynt.os.service.capability"
+                android:resource="@xml/transaction_capabilities" />
+        </service>
+    </application>
+
+</manifest>
